@@ -178,7 +178,4 @@ As you work on your AutoProfix Garage Management System, consider creating visua
     
 ![class](https://github.com/Nah-Nova/GarageManager/assets/56248103/ccbfac4d-0e81-4fa1-bc74-48459cf61729)
 
-Including diagrams and designs in your README or project documentation can help your team and stakeholders gain a better understanding of the project's structure and functionality.
-
-Feel free to update this section with links or embedded images to your diagrams and designs as your project progresses.
 
