@@ -169,7 +169,8 @@ As you work on your AutoProfix Garage Management System, consider creating visua
 
 6. **Sequence Diagrams**: Illustrate the sequence of interactions between different components or actors in your system, useful for understanding complex scenarios.
 
-7. **UI Design Screenshots**: Showcase screenshots or images of your application's user interface design to give stakeholders a preview of the final product.
+7. **Use Case Diagram**: Visualizes the use cases per actor.
+![usecase](https://github.com/Nah-Nova/GarageManager/assets/56248103/9d8d156f-ac54-4e64-b708-61c1dcd3f16f)
 
 8. **Entity Class Diagrams**: Visualize the relationships between entities in your code, including classes, properties, and methods.
 ![class](https://github.com/Nah-Nova/GarageManager/assets/56248103/ccbfac4d-0e81-4fa1-bc74-48459cf61729)
