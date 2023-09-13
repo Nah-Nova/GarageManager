@@ -1,5 +1,13 @@
 # AutoProfix Garage Management System 🚗🔧
 
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Assignment Context](#assignment-context)
+3. [Project Structure](#project-structure)
+4. [Development Steps](#development-steps)
+5. [Getting Started](#getting-started)
+6. [Diagrams and Designs](#diagrams-and-designs)
+
 ## Introduction 🌐🛠️
 
 Welcome to the AutoProfix Garage Management System repository! This project is designed to help Harold, the owner of "AutoProfix," a thriving auto repair shop in an idyllic countryside town, modernize his garage management operations. With the increasing customer base, it's time to transition from the traditional pen-and-paper approach to a web-based solution.
