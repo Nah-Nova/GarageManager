@@ -9,7 +9,7 @@ public class Invoice
     
     public string InvoiceNumber { get; set; }
     public DateTime Date { get; set; }
-    public Customer Customer { get; set; }
+    public Customer? Customer { get; set; }
     public decimal TotalAmount { get; set; }
-    public List<Payment> Payments { get; set; }
+    public List<Payment>? Payments { get; set; }
 }

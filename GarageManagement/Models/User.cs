@@ -12,7 +12,7 @@ namespace GarageManagement.Models
         public string Password { get; set; }
 
         // Navigation property to roles
-        public List<UserRole> UserRoles { get; set; }
+        public List<UserRole>? UserRoles { get; set; }
     }
 
     public class Role
@@ -23,7 +23,7 @@ namespace GarageManagement.Models
         public string Name { get; set; }
 
         // Navigation property to users
-        public List<UserRole> UserRoles { get; set; }
+        public List<UserRole>? UserRoles { get; set; }
     }
 
     public class UserRole
@@ -36,7 +36,7 @@ namespace GarageManagement.Models
         public int RoleId { get; set; }
 
         // Navigation properties
-        public User User { get; set; }
-        public Role Role { get; set; }
+        public User? User { get; set; }
+        public Role? Role { get; set; }
     }
 }

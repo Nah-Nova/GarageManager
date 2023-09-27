@@ -28,9 +28,18 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "Customer",
+        pattern: "Customer/{action}/{id?}",
+        defaults: new { controller = "Customer", action = "Index" });
+
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+});
+
 
 // Database initialization and migrations
 using (var serviceScope = app.Services.GetService<IServiceScopeFactory>().CreateScope())

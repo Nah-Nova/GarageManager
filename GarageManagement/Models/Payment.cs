@@ -8,5 +8,5 @@ public class Payment
     
     public DateTime Date { get; set; }
     public decimal Amount { get; set; }
-    public Invoice Invoice { get; set; }
+    public Invoice? Invoice { get; set; }
 }

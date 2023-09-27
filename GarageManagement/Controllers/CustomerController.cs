@@ -55,7 +55,7 @@ namespace GarageManagement.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken] // Prevents cross-site request forgery attacks
         public async Task<IActionResult> Create([Bind("Id,Name,ContactInformation")] Customer customer)
         {
             if (ModelState.IsValid)

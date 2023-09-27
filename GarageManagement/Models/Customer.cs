@@ -11,5 +11,5 @@ public class Customer
     // Other properties
 
     // Navigation property to related entities
-    public List<Vehicle> Vehicles { get; set; }
+    public List<Vehicle>? Vehicles { get; set; }
 }

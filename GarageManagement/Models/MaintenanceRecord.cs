@@ -10,5 +10,5 @@ public class MaintenanceRecord
     public DateTime Date { get; set; }
     public decimal Cost { get; set; }
     public string Workdone { get; set; }
-    public Vehicle Vehicle { get; set; }
+    public Vehicle? Vehicle { get; set; }
 }
