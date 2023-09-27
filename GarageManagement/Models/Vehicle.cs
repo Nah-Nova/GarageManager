@@ -1,11 +1,12 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GarageManagement.Models
 {
     public class Vehicle
     {
-        [Key] // Define a primary key
-        public int Id { get; set; } // Assuming the primary key is of type int
+        [Key]
+        public int Id { get; set; }
 
         public string Brand { get; set; }
         public string Model { get; set; }
@@ -15,9 +16,13 @@ namespace GarageManagement.Models
         public string MaintenanceStatus { get; set; }
 
         [Display(Name = "Owner")]
-        public Customer Owner { get; set; }  //To link the vehicle to its owner
+        public int OwnerId { get; set; } // Store the selected customer's ID
+
+        [ForeignKey("OwnerId")]
+        public Customer? Owner { get; set; }
 
         public List<MaintenanceRecord>? MaintenanceRecords { get; set; }
         public List<Invoice>? Invoices { get; set; }
     }
+
 }

@@ -48,15 +48,25 @@ namespace GarageManagement.Controllers
         // GET: Vehicle/Create
         public IActionResult Create()
         {
+            // Retrieve a list of customers from the database
+            var customers = _context.Customers.ToList();
+
+            // Create a SelectList for the dropdown list
+            var customerSelectList = new SelectList(customers, "Id", "Name");
+
+            // Add the SelectList to the ViewBag
+            ViewBag.CustomerList = customerSelectList;
+
             return View();
         }
+
 
         // POST: Vehicle/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Brand,Model,Year,ChassisNumber,Mileage,MaintenanceStatus")] Vehicle vehicle)
+        public async Task<IActionResult> Create([Bind("Id,Brand,Model,Year,ChassisNumber,Mileage,MaintenanceStatus,OwnerId")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -64,8 +74,15 @@ namespace GarageManagement.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
+            // If the model state is not valid, repopulate the dropdown list
+            var customers = _context.Customers.ToList();
+            var customerSelectList = new SelectList(customers, "Id", "Name");
+            ViewBag.CustomerList = customerSelectList;
+
             return View(vehicle);
         }
+
 
         // GET: Vehicle/Edit/5
         public async Task<IActionResult> Edit(int? id)

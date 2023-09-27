@@ -30,13 +30,15 @@ namespace GarageManagement.Controllers
         // GET: Customer/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Customers == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
             var customer = await _context.Customers
+                .Include(c => c.Vehicles) // Load associated vehicles
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (customer == null)
             {
                 return NotFound();

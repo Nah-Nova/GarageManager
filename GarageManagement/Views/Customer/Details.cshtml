@@ -24,6 +24,30 @@
             @Html.DisplayFor(model => model.ContactInformation)
         </dd>
     </dl>
+    <h2>Vehicles</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Vehicle ID</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Year</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vehicle in Model.Vehicles)
+            {
+                <tr>
+                    <td>@vehicle.Id</td>
+                    <td>@vehicle.Brand</td>
+                    <td>@vehicle.Model</td>
+                    <td>@vehicle.Year</td>
+                    <!-- Add more columns as needed -->
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
