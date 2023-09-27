@@ -10,6 +10,6 @@ public class Customer
     public string ContactInformation { get; set; }
 
     // Navigation property to related vehicles
-    public List<Vehicle> Vehicles { get; set; }
+    public List<Vehicle>? Vehicles { get; set; }
 }
 

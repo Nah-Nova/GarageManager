@@ -66,7 +66,7 @@ namespace GarageManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Brand,Model,Year,ChassisNumber,Mileage,MaintenanceStatus,OwnerId")] Vehicle vehicle)
+        public async Task<IActionResult> Create([Bind("Id,RegistrationNumber,Brand,Model,Year,ChassisNumber,Mileage,MaintenanceStatus,OwnerId")] Vehicle vehicle)
         {
             if (ModelState.IsValid)
             {
@@ -105,7 +105,7 @@ namespace GarageManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Brand,Model,Year,ChassisNumber,Mileage,MaintenanceStatus")] Vehicle vehicle)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,RegistrationNumber,Brand,Model,Year,ChassisNumber,Mileage,MaintenanceStatus")] Vehicle vehicle)
         {
             if (id != vehicle.Id)
             {

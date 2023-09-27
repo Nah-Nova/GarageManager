@@ -11,39 +11,37 @@
     <h4>Customer</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.ContactInformation)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.ContactInformation)
         </dd>
     </dl>
     <h2>Vehicles</h2>
     <table class="table">
         <thead>
-            <tr>
-                <th>Vehicle ID</th>
-                <th>Brand</th>
-                <th>Model</th>
-                <th>Year</th>
-                <!-- Add more columns as needed -->
-            </tr>
+        <tr>
+            <th>RegistrationNumber</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+        </tr>
         </thead>
         <tbody>
             @foreach (var vehicle in Model.Vehicles)
             {
                 <tr>
-                    <td>@vehicle.Id</td>
+                    <td>@vehicle.RegistrationNumber</td>
                     <td>@vehicle.Brand</td>
                     <td>@vehicle.Model</td>
                     <td>@vehicle.Year</td>
-                    <!-- Add more columns as needed -->
                 </tr>
             }
         </tbody>
