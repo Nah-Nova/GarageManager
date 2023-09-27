@@ -87,25 +87,32 @@ namespace GarageManagement.Controllers
         // GET: Vehicle/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Vehicles == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var vehicle = await _context.Vehicles.FindAsync(id);
+            var vehicle = await _context.Vehicles
+                .Include(v => v.Owner) // Include the Owner (Customer) entity
+                .FirstOrDefaultAsync(m => m.Id == id);
+
             if (vehicle == null)
             {
                 return NotFound();
             }
+
+            // Load the list of customers for the dropdown list
+            var customers = _context.Customers.ToList();
+            ViewBag.CustomerList = new SelectList(customers, "Id", "Name", vehicle.OwnerId);
+
             return View(vehicle);
         }
 
+
         // POST: Vehicle/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,RegistrationNumber,Brand,Model,Year,ChassisNumber,Mileage,MaintenanceStatus")] Vehicle vehicle)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,RegistrationNumber,Brand,Model,Year,ChassisNumber,Mileage,MaintenanceStatus,OwnerId")] Vehicle vehicle)
         {
             if (id != vehicle.Id)
             {
@@ -116,6 +123,13 @@ namespace GarageManagement.Controllers
             {
                 try
                 {
+                    // Ensure that the OwnerId corresponds to an existing CustomerId
+                    var existingCustomer = await _context.Customers.FindAsync(vehicle.OwnerId);
+                    if (existingCustomer == null)
+                    {
+                        return NotFound(); // Handle the case where the OwnerId is invalid
+                    }
+
                     _context.Update(vehicle);
                     await _context.SaveChangesAsync();
                 }
