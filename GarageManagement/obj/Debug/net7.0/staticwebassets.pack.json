@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/GarageManagement.bundle.scp.css"
     },
     {
+      "Id": "/Users/noaheutz/Developer/GarageManager/GarageManagement/wwwroot/css/bootstrap.css",
+      "PackagePath": "staticwebassets/css/bootstrap.css"
+    },
+    {
       "Id": "/Users/noaheutz/Developer/GarageManager/GarageManagement/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

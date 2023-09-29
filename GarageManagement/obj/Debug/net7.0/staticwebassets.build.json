@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2NhnrjOFksQqXReVKCNaY8bFe58BmTEn+qkilyyPQmU=",
+  "Hash": "AP0I/zR93dvgKuQFSsXQIcW1dotpUEBssG18CA3dU3A=",
   "Source": "GarageManagement",
   "BasePath": "_content/GarageManagement",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/noaheutz/Developer/GarageManager/GarageManagement/obj/Debug/net7.0/scopedcss/projectbundle/GarageManagement.bundle.scp.css"
+    },
+    {
+      "Identity": "/Users/noaheutz/Developer/GarageManager/GarageManagement/wwwroot/css/bootstrap.css",
+      "SourceId": "GarageManagement",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/noaheutz/Developer/GarageManager/GarageManagement/wwwroot/",
+      "BasePath": "_content/GarageManagement",
+      "RelativePath": "css/bootstrap.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/bootstrap.css"
     },
     {
       "Identity": "/Users/noaheutz/Developer/GarageManager/GarageManagement/wwwroot/css/site.css",
