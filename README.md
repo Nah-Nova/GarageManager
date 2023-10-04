@@ -284,7 +284,6 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 | **Main success scenario**|1, 2, 3, 4, 5, 6, 7|
 | **Alternatieve scenario's**|1, 8 <br> 1, 2, 3, 4, 5, 9|
 
-
 ## Diagrams and Designs 📊🎨
 
 1. **Wireframes and Mockups**: Design the user interface of your application using wireframes or mockups to outline the layout and user interaction flow.
