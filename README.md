@@ -265,24 +265,18 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 
 ## Diagrams and Designs 📊🎨
 
-1. **System Architecture Diagrams**: Visualize how different components of your application interact with each other, including the MVC structure, middleware, and external services.
-
-2. **Database Schema Diagrams**: Create Entity-Relationship Diagrams (ERDs) or similar representations to illustrate your database structure, including tables, relationships, and constraints.
-
-3. **Wireframes and Mockups**: Design the user interface of your application using wireframes or mockups to outline the layout and user interaction flow.
+1. **Wireframes and Mockups**: Design the user interface of your application using wireframes or mockups to outline the layout and user interaction flow.
    
 ![frame](https://github.com/Nah-Nova/GarageManager/assets/56248103/f74ebd0c-800c-4b63-8ea2-1760198582f9)
 
-6. **Sequence Diagrams**: Illustrate the sequence of interactions between different components or actors in your system, useful for understanding complex scenarios.
-
-   
-
-8. **Use Case Diagram**: Visualizes the use cases per actor.
+2. **Use Case Diagram**: Visualizes the use cases per actor.
    
 ![usecase](https://github.com/Nah-Nova/GarageManager/assets/56248103/9d8d156f-ac54-4e64-b708-61c1dcd3f16f)
 
-9. **Entity Class Diagrams**: Visualize the relationships between entities in your code, including classes, properties, and methods.
+3. **Entity Class Diagrams**: Visualize the relationships between entities in your code, including classes, properties, and methods.
     
 ![class](https://github.com/Nah-Nova/GarageManager/assets/56248103/ccbfac4d-0e81-4fa1-bc74-48459cf61729)
 
-
+4. **Componment Diagrams**: Visualize the modular structure of a software system, depicting components, interfaces, dependencies, and their relationships.
+    
+![component](https://github.com/Nah-Nova/GarageManager/assets/56248103/ccbfac4d-0e81-4fa1-bc74-48459cf61729)
