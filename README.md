@@ -280,23 +280,25 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 
 
 ## Usecase Desciptions
-| Usecase | UC1: Register Vehicle ||
-|:------------- |:-------------|:-|
-| **Beschrijving**  | User registers unique vehicle|
-| **Actor** |User|
-| **Trigger(s)** |The User presses the add new vehicle button|
-| **Pre-Conditions** | - The vehicle is unique|
-| **Post-Conditions** | - New vehicle has been added||
-| **Steps** |**Actor User**|**System**|
-| |1. User presses button add new vehicle||
-| ||2. System shows create vehicle page
-| |3. Users fills in unique registration number||
-| |4. User presses create button||
-| ||5. System checks if registration number alredy exsists
-| ||6. Systeem saves data to db
-| ||7. System gives succes
-| |8. Users presses cancel button||
-| ||9. Systeem gives error
+### Use Case 1: Register Vehicle
+| Use Case | UC1: Register Vehicle |
+|:----------------|:--------------------------|
+| **Description** | User registers unique vehicle |
+| **Actor** | User |
+| **Trigger(s)** | The User selects a vehicle and initiates the maintenance scheduling process. |
+| **Pre-Conditions** | - The vehicle is unique |
+| **Post-Conditions** | - New vehicle has been added |
+| **Steps** | 
+| **Actor (User)** | **System** |
+| 1. User presses button add new vehicle | |
+|  | 2. System shows create vehicle page|
+| 3. Users fills in unique registration number | |
+|  4. User presses create button| |
+|  | 5. System checks if registration number alredy exsists|
+|  | 6. System saves data to db|
+| | 7.System gives succes |
+| 8. Users presses cancel button | |
+|  | 9. System gives error |
 | **Main success scenario**|1, 2, 3, 4, 5, 6, 7|
 | **Alternatieve scenario's**|1, 8 <br> 1, 2, 3, 4, 5, 9|
 
