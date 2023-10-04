@@ -389,6 +389,42 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 | **Main Success Scenario** | 1, 2, 3 |
 | **Alternative Scenarios** | 1 (User cancels report generation) |
 
+### Use Case 7: Manage Customers
+| Use Case | UC7: Manage Customers |
+|:----------------|:--------------------------|
+| **Description** | Users with appropriate permissions can manage customer data, including their contact information and vehicle history. |
+| **Actor** | User (Garage Manager, Garage Staff) |
+| **Trigger(s)** | The User selects actions such as adding, updating, or removing customer records. |
+| **Pre-Conditions** | - User has access to customer management functionality. |
+| **Post-Conditions** | - Customer data is updated or removed as per the User's actions. |
+| **Steps** | 
+| **Actor (User)** | **System** |
+| 1. User selects an action (add, update, remove) related to customer data. | |
+| 2. User provides or modifies customer details (e.g., name, contact information). | |
+|  | 3. System validates the action and customer data. |
+|  | 4. System updates or removes customer data accordingly. |
+| 5. User receives a confirmation of the customer data update or removal. | |
+| **Main Success Scenario** | 1, 2, 3, 4, 5 |
+| **Alternative Scenarios** | 1 (User cancels customer data management action) |
+
+### Use Case 8: Manage Users and Roles
+| Use Case | UC8: Manage Users and Roles |
+|:----------------|:--------------------------|
+| **Description** | Users with administrative roles can manage user accounts and their roles within the system. |
+| **Actor** | User (Garage Administrator) |
+| **Trigger(s)** | The User selects actions related to user and role management, including adding, updating, or removing user accounts and assigning or revoking roles. |
+| **Pre-Conditions** | - User has administrative privileges to manage user accounts and roles. |
+| **Post-Conditions** | - User accounts and their roles are updated or removed as per the User's actions. |
+| **Steps** | 
+| **Actor (User)** | **System** |
+| 1. User selects an action (add user, update user, remove user, assign role, revoke role) related to user and role management. | |
+| 2. User provides or modifies user account details (e.g., username, password) or specifies role assignments. | |
+|  | 3. System validates the action and user account data or role assignment. |
+|  | 4. System updates or removes user accounts and assigns or revokes roles accordingly. |
+| 5. User receives a confirmation of the user account and role management action. | |
+| **Main Success Scenario** | 1, 2, 3, 4, 5 |
+| **Alternative Scenarios** | 1 (User cancels user account and role management action) |
+
 ## Diagrams and Designs 📊🎨
 
 1. **Wireframes and Mockups**: Design the user interface of your application using wireframes or mockups to outline the layout and user interaction flow.
