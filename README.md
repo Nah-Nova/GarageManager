@@ -6,7 +6,8 @@
 3. [Project Structure](#project-structure)
 4. [Development Steps](#development-steps)
 5. [Getting Started](#getting-started)
-6. [Diagrams and Designs](#diagrams-and-designs)
+6. [Use Case Descriptions](#usecase-descriptions)
+7. [Diagrams and Designs](#diagrams-and-designs)
 
 ## Introduction 🌐🛠️
 
@@ -261,6 +262,27 @@ Follow these steps to get started with the AutoProfix Garage Management System:
     - Enjoy the benefits of the AutoProfix Garage Management System, which will help streamline your garage operations, improve customer service, and enhance your business efficiency.
 
 Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section for visual representations of the application's architecture, database schema, and user interface designs to gain a better understanding of the system's structure and functionality.
+
+## Usecase Desciptions
+| Usecase | UC1: Register Vehicle ||
+|:------------- |:-------------|:-|
+| **Beschrijving**  | User registers unique vehicle|
+| **Actor** |User|
+| **Trigger(s)** |The User presses the add new vehicle button|
+| **Pre-Conditions** | - The vehicle is unique|
+| **Post-Conditions** | - New vehicle has been added||
+| **Stappen** |**Actor speler**|**Systeem**|
+| |1. User presses button add new vehicle||
+| ||2. System shows create vehicle page
+| |3. Users fills in unique registration number||
+| |4. User presses create button||
+| ||5. System checks if registration number alredy exsists
+| ||6. Systeem saves data to db
+| ||7. System gives succes
+| |8. Users presses cancel button||
+| ||9. Systeem gives error
+| **Main success scenario**|1, 2, 3, 4, 5, 6, 7|
+| **Alternatieve scenario's**|1, 8 <br> 1, 2, 3, 4, 5, 9|
 
 
 ## Diagrams and Designs 📊🎨
