@@ -6,8 +6,9 @@
 3. [Project Structure](#project-structure)
 4. [Development Steps](#development-steps)
 5. [Getting Started](#getting-started)
-6. [Use Case Descriptions](#usecase-descriptions)
-7. [Diagrams and Designs](#diagrams-and-designs)
+6. [Requirements](#requirements)
+7. [Use Case Descriptions](#usecase-descriptions)
+8. [Diagrams and Designs](#diagrams-and-designs)
 
 ## Introduction 🌐🛠️
 
@@ -262,6 +263,21 @@ Follow these steps to get started with the AutoProfix Garage Management System:
     - Enjoy the benefits of the AutoProfix Garage Management System, which will help streamline your garage operations, improve customer service, and enhance your business efficiency.
 
 Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section for visual representations of the application's architecture, database schema, and user interface designs to gain a better understanding of the system's structure and functionality.
+
+## Requirements
+|Code|User story|Eis|Functioneel/Niet functioneel|Eigenaar|Gevalideerd|Prioritering Moscow|
+|:----|:----|:----|:----|:----|:----|:----|
+|V-001| |De garagemedewerker moet in staat zijn gedetailleerde informatie over voertuigen vast te leggen, inclusief merk, model, bouwjaar, chassisnummer, kilometerstand en onderhoudsstatus.|TRUE|Nicky|TRUE|Must Have|
+|V-002| |De garagemedewerker moet in staat zijn reparatie- en onderhoudsgegevens vast te leggen, inclusief datums, kosten en uitgevoerde werkzaamheden.|TRUE|Nicky|TRUE|Could have|
+|V-003| |De garagemedewerker moet in staat zijn om afspraken te plannen en te beheren via een intuïtieve interface om het proces van het inplannen van afspraken te verbeteren.|TRUE|Nicky|TRUE|Could have|
+|V-004| |De garagemedewerker moet in staat zijn om facturen te genereren voor klanten op basis van uitgevoerde werkzaamheden en moet de ontvangen betalingen bijhouden.|TRUE|Nicky|TRUE|Could have|
+|V-005| |De garagemedewerker moet klantgegevens kunnen beheren, inclusief contactinformatie en voertuiggeschiedenis, om een gepersonaliseerde service te bieden.|TRUE|Nicky|TRUE|Must Have|
+|V-006| |De garagemedewerker moet in staat zijn om de voorraad van benodigde onderdelen en materialen bij te houden om de beschikbaarheid ervan te controleren.|TRUE|Nicky|TRUE|Must Have|
+|V-007| |De garagemedewerker moet toegang hebben tot krachtige rapportage- en analysemogelijkheden om financiële gegevens, prestatiegegevens en onderhoudshistorie te genereren.|TRUE|Nicky|TRUE|Could have|
+|V-008| |De garagemedewerker moet ervoor zorgen dat klantgegevens veilig worden bewaard en dat het systeem beschermd is tegen mogelijke bedreigingen.|FALSE|Nicky|TRUE|Must Have|
+|V-009| |De garagemedewerker moet de rol van "Garagebeheerder" kunnen vervullen om toegang te hebben tot alle functionaliteiten.|FALSE|Nicky|TRUE|Could have|
+|V-010| |De garagemedewerker moet de rol van "Monteur" kunnen vervullen met beperkte toegang tot alleen reparatie- en onderhoudsgerelateerde functies.|FALSE|Nicky|TRUE|Could Have|
+
 
 ## Usecase Desciptions
 | Usecase | UC1: Register Vehicle ||
