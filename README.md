@@ -278,5 +278,4 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 ![class](https://github.com/Nah-Nova/GarageManager/assets/56248103/ccbfac4d-0e81-4fa1-bc74-48459cf61729)
 
 4. **Componment Diagrams**: Visualize the modular structure of a software system, depicting components, interfaces, dependencies, and their relationships.
-    
-![component](https://github.com/Nah-Nova/GarageManager/assets/56248103/ccbfac4d-0e81-4fa1-bc74-48459cf61729)
+![component](https://github.com/Nah-Nova/GarageManager/assets/56248103/d3990a78-2cc7-4fd0-8cfb-f9e8f690c33b)
