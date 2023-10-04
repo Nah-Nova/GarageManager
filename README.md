@@ -9,7 +9,7 @@
 6. [Use Case Descriptions](#usecase-descriptions)
 7. [Diagrams and Designs](#diagrams-and-designs)
 
-## Introduction {#introduction} 🌐🛠️
+## Introduction 🌐🛠️
 
 Welcome to the AutoProfix Garage Management System repository! This project is designed to help Harold, the owner of "AutoProfix," a thriving auto repair shop in an idyllic countryside town, modernize his garage management operations. With the increasing customer base, it's time to transition from the traditional pen-and-paper approach to a web-based solution. using a code to database approch and scaffolding the controllers and views from the models
 
