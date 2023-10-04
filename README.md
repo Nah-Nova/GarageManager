@@ -37,6 +37,8 @@ Here are the key points of the challenge he's facing:
 
 ## Project Structure 🏗️
 
+:warning: **Not a Finished Production System**: This project represents an MVP (Minimum Viable Product) created to demonstrate the implementation of concepts covered in web application lectures. It intentionally refrains from going beyond the instructed scope to avoid unnecessary complexity. Please note that this is not a fully polished or production-ready application but serves as a foundation for further development and learning.
+
 Here's an organized project structure to consider for your ASP.NET Core MVC application:
 
 1. **Project Root**:
@@ -44,38 +46,96 @@ Here's an organized project structure to consider for your ASP.NET Core MVC appl
    - `Program.cs` and `Startup.cs`.
 
 2. **Controllers**:
-   - Create a folder for your controller classes.
+   - Create a folder for your controller classes. This is where you'll define the actions that handle incoming HTTP requests.
+
+   In your project, you have the following controllers:
+
+   - **MVC Controllers**:
+     - `CustomerController`: Handles operations related to customers in your web application.
+     - `HomeController`: Manages the main home page and general site navigation.
+     - `InventoryItemController`: Deals with inventory items in your application.
+     - `InvoiceController`: Manages invoice-related actions and views.
+     - `MaintenanceRecordController`: Handles maintenance record operations.
+     - `PaymentController`: Controls payment-related functionalities.
+     - `UserController`: Manages user-related actions, likely for authentication and user management.
+     - `VehicleController`: Handles operations related to vehicles in your application.
+
+   - **API Controllers**:
+     - `CustomerApiController`: Provides a RESTful API for CRUD operations on customer data. For example, you can use the following URL to retrieve customer data: `GET http://localhost:5137/api/CustomerApi/2`.
+     - `VehicleApiController`: Offers a RESTful API for CRUD operations on vehicle data. You can access vehicle information using the API, e.g., `GET http://localhost:5137/api/VehicleApi/2`.
    
 3. **Views**:
-   - Organize your views within a folder structure that follows your controller organization.
+   - Organize your views within a folder structure that follows your controller organization. Views are responsible for rendering HTML templates and presenting data to users.
+
+   In this project, you have the following views organized by their respective controllers:
+
+   - **Customer Views**:
+     - `Customer`: Views related to customer operations.
+     
+   - **Home Views**:
+     - `Home`: Main home page and general site content.
+     
+   - **InventoryItem Views**:
+     - `InventoryItem`: Views for inventory item management.
+     
+   - **Invoice Views**:
+     - `Invoice`: Views for invoice-related actions and display.
+     
+   - **MaintenanceRecord Views**:
+     - `MaintenanceRecord`: Views related to maintenance record management.
+     
+   - **Payment Views**:
+     - `Payment`: Views related to payment operations.
+     
+   - **Shared Views**:
+     - `Shared`: Common shared views that can be reused across multiple controllers.
+     
+   - **User Views**:
+     - `User`: Views for user management and authentication.
+     
+   - **Vehicle Views**:
+     - `Vehicle`: Views related to vehicle operations.
 
 4. **Models**:
-   - Create an `Entities` folder to store your entity classes.
+   - Create an `Entities` folder to store your entity classes. These classes represent the data structure of your application and are often mapped to database tables.
+
+   In your project, you may have the following models:
+
+   - **Customer Model**:
+     - Represents customer data and attributes.
+   
+   - **ErrorViewModel Model**:
+     - Typically used for error handling and displaying error messages in views.
+
+   - **InventoryItem Model**:
+     - Represents information about items in your inventory.
+
+   - **Invoice Model**:
+     - Represents invoice data, including line items and total amounts.
+
+   - **MaintenanceRecord Model**:
+     - Represents records of maintenance activities.
+
+   - **Payment Model**:
+     - Represents payment information for transactions.
+
+   - **User Model**:
+     - Represents user data and attributes, often used for authentication and user management.
+
+   - **Vehicle Model**:
+     - Represents information about vehicles, including make, model, and other relevant details.
+
+   These models define the structure of your data and play a crucial role in interacting with your database and rendering views. Organizing them in an `Entities` folder helps maintain clarity in your project structure.
    
 5. **Data**:
-   - `DbContexts` folder: Contains your Entity Framework context classes.
+   - `ApplicationDbContexts` folder: Contains your Entity Framework context classes.
    - `Migrations` folder: Contains database migration files generated by Entity Framework.
-
-6. **Repositories** (optional):
-   - If you want to separate your data access logic, create a `Repositories` folder here.
-
-7. **Services**:
-   - Implement business logic in a `Services` folder.
-
-8. **Utilities or Helpers**:
-   - If you have utility classes or custom helpers, place them here.
-
-9. **wwwroot**:
+     
+6. **wwwroot**:
    - Store your static files like JavaScript, CSS, and images in this folder.
 
-10. **Areas** (if needed):
-    - If your MVC application has distinct functional areas (e.g., Admin, User), you can organize controllers, views, and models within separate "Areas" folders.
-
-11. **Tests** (optional):
+7. **Tests** (optional):
     - Create folders for unit tests and integration tests to ensure code quality.
-
-12. **Logs and Resources** (optional):
-    - If needed, create folders to manage logs or external resource files.
 
 ## Development Steps 📝
 
@@ -148,15 +208,62 @@ Building an ASP.NET Core MVC application involves several key steps:
 22. **Maintenance**:
     - Regularly maintain and update your app.
 
-## Getting Started 🚀
 
-Start by cloning this repository and customize it to meet your project's needs. You'll find detailed explanations and examples in the project structure and development steps above.
+# Getting Started 🚀
 
-Happy coding and building amazing ASP.NET Core MVC applications! 🌟🚗💻
+Follow these steps to get started with the AutoProfix Garage Management System:
+
+1. **Prerequisites**:
+   - Make sure you have the following prerequisites installed on your development machine:
+     - Visual Studio or Visual Studio Code.
+     - .NET SDK (Software Development Kit).
+     - SQL Server (or another preferred database system).
+
+2. **Clone the Repository**:
+   - Clone this GitHub repository to your local machine using the following command:
+     ```
+     git clone https://github.com/Nah-Nova/GarageManager.git
+     ```
+
+3. **Open the Project**:
+   - Open the project using your chosen development environment (Visual Studio or Visual Studio Code).
+
+4. **Database Configuration**:
+   - Configure your database connection string in the `appsettings.json` file. Ensure it points to your SQL Server instance or preferred database system.
+
+5. **Database Migration**:
+   - This project was created with Code First in mind, not Database First. Code First allows you to define your database schema using C# classes and generate the database from your model. Open a terminal within your project's root directory and run the following commands to apply the initial database migration:
+     ```
+     dotnet ef migrations add InitialCreate
+     dotnet ef database update
+     ```
+
+6. **Run the Application**:
+   - Build and run the application using your development environment. If using Visual Studio, press F5. If using Visual Studio Code, use the `dotnet run` command.
+
+7. **Access the Application**:
+   - Open your web browser and navigate to `http://localhost:5137` (or the port specified in your `Startup.cs` if different). You should see the AutoProfix Garage Management System homepage.
+
+8. **Explore the Functionality**:
+   - Explore the various features and functionalities of the application, such as managing customers, vehicles, invoices, maintenance records, and more.
+
+9. **Customize and Extend**:
+   - Customize the application to meet your specific requirements or extend its functionality as needed. You can modify controllers, views, models, and add new features to suit your garage management needs.
+
+10. **Testing and Deployment**:
+    - Test the application thoroughly to ensure it meets your requirements and standards.
+    - When ready, deploy the application to a production environment or hosting service to make it accessible to your team and customers.
+
+11. **Documentation**:
+    - Create documentation for your team, including user guides and admin instructions on how to use and maintain the system.
+
+12. **Enjoy**:
+    - Enjoy the benefits of the AutoProfix Garage Management System, which will help streamline your garage operations, improve customer service, and enhance your business efficiency.
+
+Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section for visual representations of the application's architecture, database schema, and user interface designs to gain a better understanding of the system's structure and functionality.
+
 
 ## Diagrams and Designs 📊🎨
-
-As you work on your AutoProfix Garage Management System, consider creating visual representations of your system's architecture, database schema, or user interface designs. Diagrams and designs can greatly aid in project understanding, planning, and documentation. Here are some types of diagrams and designs you may want to include:
 
 1. **System Architecture Diagrams**: Visualize how different components of your application interact with each other, including the MVC structure, middleware, and external services.
 
