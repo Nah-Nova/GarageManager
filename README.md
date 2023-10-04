@@ -287,7 +287,7 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 | **Trigger(s)** |The User presses the add new vehicle button|
 | **Pre-Conditions** | - The vehicle is unique|
 | **Post-Conditions** | - New vehicle has been added||
-| **Stappen** |**Actor speler**|**Systeem**|
+| **Steps** |**Actor User**|**System**|
 | |1. User presses button add new vehicle||
 | ||2. System shows create vehicle page
 | |3. Users fills in unique registration number||
@@ -300,7 +300,6 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 | **Main success scenario**|1, 2, 3, 4, 5, 6, 7|
 | **Alternatieve scenario's**|1, 8 <br> 1, 2, 3, 4, 5, 9|
 
-
 ### Use Case 2: Schedule Maintenance
 | Use Case | UC2: Schedule Maintenance |
 |:----------------|:--------------------------|
@@ -309,13 +308,14 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 | **Trigger(s)** | The User selects a vehicle and initiates the maintenance scheduling process. |
 | **Pre-Conditions** | - User is authenticated - Vehicle exists in the system |
 | **Post-Conditions** | - Maintenance service is scheduled for the vehicle. |
-| **Steps** | **Actor (User)** | **System** |
-| | 1. User selects a vehicle for maintenance scheduling. | |
-| | 2. User provides details of the maintenance service (e.g., type, date, time). | |
-| | 3. User confirms the scheduling. | |
-| | | 4. System validates the input. |
-| | | 5. System schedules the maintenance service. |
-| | 6. User receives a confirmation of the scheduled maintenance. | |
+| **Steps** | 
+| **Actor (User)** | **System** |
+| 1. User selects a vehicle for maintenance scheduling. | |
+| 2. User provides details of the maintenance service (e.g., type, date, time). | |
+| 3. User confirms the scheduling. | |
+|  | 4. System validates the input. |
+|  | 5. System schedules the maintenance service. |
+| 6. User receives a confirmation of the scheduled maintenance. | |
 | **Main Success Scenario** | 1, 2, 3, 4, 5, 6 |
 | **Alternative Scenarios** | 1, 2, 3 (User cancels scheduling) |
 
@@ -327,12 +327,13 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 | **Trigger(s)** | The User selects a completed maintenance service and initiates the invoice generation process. |
 | **Pre-Conditions** | - Maintenance service is completed and tracked in the system. |
 | **Post-Conditions** | - An invoice is generated for the maintenance service. |
-| **Steps** | **Actor (User)** | **System** |
-| | 1. User selects a completed maintenance service for invoice generation. | |
-| | | 2. System retrieves service details and customer information. |
-| | 3. User confirms the invoice details. | |
-| | | 4. System generates the invoice with relevant information. |
-| | 5. User receives the generated invoice. | |
+| **Steps** | 
+| **Actor (User)** | **System** |
+| 1. User selects a completed maintenance service for invoice generation. | |
+|  | 2. System retrieves service details and customer information. |
+| 3. User confirms the invoice details. | |
+|  | 4. System generates the invoice with relevant information. |
+| 5. User receives the generated invoice. | |
 | **Main Success Scenario** | 1, 2, 3, 4, 5 |
 | **Alternative Scenarios** | 1, 3 (User cancels invoice generation) |
 
@@ -344,11 +345,12 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 | **Trigger(s)** | The User records a payment received from a customer. |
 | **Pre-Conditions** | - Customer is associated with completed maintenance services. |
 | **Post-Conditions** | - Payment is recorded and associated with the customer and service. |
-| **Steps** | **Actor (User)** | **System** |
-| | 1. User selects a customer and a completed maintenance service for payment tracking. | |
-| | 2. User records the payment details (e.g., amount, date). | |
-| | | 3. System validates and associates the payment with the customer and service. |
-| | 4. User receives a confirmation of the recorded payment. | |
+| **Steps** | 
+| **Actor (User)** | **System** |
+| 1. User selects a customer and a completed maintenance service for payment tracking. | |
+| 2. User records the payment details (e.g., amount, date). | |
+|  | 3. System validates and associates the payment with the customer and service. |
+| 4. User receives a confirmation of the recorded payment. | |
 | **Main Success Scenario** | 1, 2, 3, 4 |
 | **Alternative Scenarios** | 1 (User cancels payment recording) |
 
@@ -360,11 +362,12 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 | **Trigger(s)** | The User initiates actions to add, update, or remove items from the inventory. |
 | **Pre-Conditions** | - User has access to inventory management functionality. |
 | **Post-Conditions** | - Inventory is updated according to the User's actions. |
-| **Steps** | **Actor (User)** | **System** |
-| | 1. User selects an action (add, update, remove) and specifies item details. | |
-| | | 2. System validates the action and item details. |
-| | | 3. System updates the inventory accordingly. |
-| | 4. User receives a confirmation of the inventory update. | |
+| **Steps** | 
+| **Actor (User)** | **System** |
+| 1. User selects an action (add, update, remove) and specifies item details. | |
+|  | 2. System validates the action and item details. |
+|  | 3. System updates the inventory accordingly. |
+| 4. User receives a confirmation of the inventory update. | |
 | **Main Success Scenario** | 1, 2, 3, 4 |
 | **Alternative Scenarios** | 1 (User cancels inventory management action) |
 
@@ -376,10 +379,11 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 | **Trigger(s)** | The User selects a report type and generates the desired report. |
 | **Pre-Conditions** | - User has access to report generation functionality. |
 | **Post-Conditions** | - User obtains the generated report. |
-| **Steps** | **Actor (User)** | **System** |
-| | 1. User selects a report type (e.g., financial, performance, maintenance). | |
-| | | 2. System generates the requested report based on available data. |
-| | 3. User receives and reviews the generated report. | |
+| **Steps** | 
+| **Actor (User)** | **System** |
+| 1. User selects a report type (e.g., financial, performance, maintenance). | |
+|  | 2. System generates the requested report based on available data. |
+| 3. User receives and reviews the generated report. | |
 | **Main Success Scenario** | 1, 2, 3 |
 | **Alternative Scenarios** | 1 (User cancels report generation) |
 
