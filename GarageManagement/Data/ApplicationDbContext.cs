@@ -21,9 +21,15 @@ namespace GarageManagement.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Configure relationships and constraints here if needed
-            // For example, modelBuilder.Entity<Customer>().HasMany(c => c.Vehicles);
+            modelBuilder.Entity<Customer>()
+                .HasMany(c => c.Vehicles)
+                .WithOne(v => v.Owner)
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Vehicle>()
+                .HasMany(v => v.MaintenanceRecords)
+                .WithOne(m => m.Vehicle)
+                .OnDelete(DeleteBehavior.Cascade);
             // Other configurations...
-
             // Specify SQL Server column types for decimal properties
             modelBuilder.Entity<InventoryItem>()
                 .Property(i => i.Price)

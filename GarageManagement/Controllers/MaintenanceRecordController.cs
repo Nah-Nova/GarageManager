@@ -48,6 +48,15 @@ namespace GarageManagement.Controllers
         // GET: MaintenanceRecord/Create
         public IActionResult Create()
         {
+            // Retrieve a list of customers from the database
+            var vehicles = _context.Vehicles.ToList();
+
+            // Create a SelectList for the dropdown list
+            var vehicleSelectList = new SelectList(vehicles, "Id", "RegistrationNumber");
+
+            // Add the SelectList to the ViewBag
+            ViewBag.VehicleList = vehicleSelectList;
+            
             return View();
         }
 
@@ -56,7 +65,7 @@ namespace GarageManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Date,Cost,Workdone")] MaintenanceRecord maintenanceRecord)
+        public async Task<IActionResult> Create([Bind("Id,Date,Cost,Workdone,VehicleId")] MaintenanceRecord maintenanceRecord)
         {
             if (ModelState.IsValid)
             {
@@ -64,8 +73,15 @@ namespace GarageManagement.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+    
+            // If the model state is not valid or if you want to repopulate the dropdown list in case of validation failure
+            var vehicles = _context.Vehicles.ToList();
+            var vehicleSelectList = new SelectList(vehicles, "Id", "RegistrationNumber");
+            ViewBag.VehicleList = vehicleSelectList;
+    
             return View(maintenanceRecord);
         }
+
 
         // GET: MaintenanceRecord/Edit/5
         public async Task<IActionResult> Edit(int? id)

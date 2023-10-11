@@ -79,7 +79,6 @@ namespace GarageManagement.Controllers
             var customers = _context.Customers.ToList();
             var customerSelectList = new SelectList(customers, "Id", "Name");
             ViewBag.CustomerList = customerSelectList;
-
             return View(vehicle);
         }
 
