@@ -54,6 +54,26 @@
             @Html.DisplayFor(model => model.MaintenanceStatus)
         </dd>
     </dl>
+    <h2>Vehicles</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Cost</th>
+                <th>Workdone</th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach (var maintenanceRecord in Model.MaintenanceRecords)
+                {
+                    <tr>
+                        <td>@maintenanceRecord.Date</td>
+                        <td>@maintenanceRecord.Cost</td>
+                        <td>@maintenanceRecord.Workdone</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |

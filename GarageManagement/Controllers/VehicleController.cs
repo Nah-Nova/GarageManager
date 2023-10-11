@@ -36,6 +36,7 @@ namespace GarageManagement.Controllers
             }
 
             var vehicle = await _context.Vehicles
+                .Include(c => c.MaintenanceRecords) // Load associated maintenance records
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (vehicle == null)
             {
