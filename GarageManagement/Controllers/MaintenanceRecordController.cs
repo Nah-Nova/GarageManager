@@ -91,11 +91,16 @@ namespace GarageManagement.Controllers
                 return NotFound();
             }
 
-            var maintenanceRecord = await _context.MaintenanceRecords.FindAsync(id);
+            var maintenanceRecord = await _context.MaintenanceRecords 
+                .Include(v => v.Vehicle) // Include the Vehicle (Vehicle) entity
+                .FirstOrDefaultAsync(i => i.Id == id);
             if (maintenanceRecord == null)
             {
                 return NotFound();
             }
+            // Load the list of customers for the dropdown list
+            var vehicles = _context.Vehicles.ToList();
+            ViewBag.VehicleList = new SelectList(vehicles, "Id", "RegistrationNumber", vehicles.FirstOrDefault(v => v.Id == maintenanceRecord.VehicleId));
             return View(maintenanceRecord);
         }
 
@@ -104,7 +109,7 @@ namespace GarageManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Cost,Workdone")] MaintenanceRecord maintenanceRecord)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Date,Cost,Workdone,VehicleId")] MaintenanceRecord maintenanceRecord)
         {
             if (id != maintenanceRecord.Id)
             {
