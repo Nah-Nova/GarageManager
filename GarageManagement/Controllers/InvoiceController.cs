@@ -48,6 +48,15 @@ namespace GarageManagement.Controllers
         // GET: Invoice/Create
         public IActionResult Create()
         {
+            // Retrieve a list of customers from the database
+            var vehicles = _context.Vehicles.ToList();
+
+            // Create a SelectList for the dropdown list
+            var vehicleSelectList = new SelectList(vehicles, "Id", "RegistrationNumber");
+
+            // Add the SelectList to the ViewBag
+            ViewBag.VehicleList = vehicleSelectList;
+
             return View();
         }
 
@@ -56,7 +65,7 @@ namespace GarageManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,InvoiceNumber,Date,TotalAmount")] Invoice invoice)
+        public async Task<IActionResult> Create([Bind("Id,InvoiceNumber,Date,TotalAmount,VehicleId")] Invoice invoice)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +73,10 @@ namespace GarageManagement.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            // If the model state is not valid or if you want to repopulate the dropdown list in case of validation failure
+            var vehicles = _context.Vehicles.ToList();
+            var vehicleSelectList = new SelectList(vehicles, "Id", "RegistrationNumber");
+            ViewBag.VehicleList = vehicleSelectList;
             return View(invoice);
         }
 
@@ -75,11 +88,18 @@ namespace GarageManagement.Controllers
                 return NotFound();
             }
 
-            var invoice = await _context.Invoices.FindAsync(id);
+            var invoice = await _context.Invoices
+                .Include(v => v.Vehicle) // Include the Vehicle (Vehicle) entity
+                .FirstOrDefaultAsync(i => i.Id == id);
+                
+            
             if (invoice == null)
             {
                 return NotFound();
             }
+            // Load the list of customers for the dropdown list
+            var vehicles = _context.Vehicles.ToList();
+            ViewBag.VehicleList = new SelectList(vehicles, "Id", "RegistrationNumber");
             return View(invoice);
         }
 
@@ -88,7 +108,7 @@ namespace GarageManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,InvoiceNumber,Date,TotalAmount")] Invoice invoice)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,InvoiceNumber,Date,TotalAmount,VehicleId")] Invoice invoice)
         {
             if (id != invoice.Id)
             {

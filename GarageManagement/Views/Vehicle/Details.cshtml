@@ -54,26 +54,47 @@
             @Html.DisplayFor(model => model.MaintenanceStatus)
         </dd>
     </dl>
-    <h2>Vehicles</h2>
-        <table class="table">
-            <thead>
+    <h2>MaintenanceRecords</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Cost</th>
+            <th>Workdone</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var maintenanceRecord in Model.MaintenanceRecords)
+        {
             <tr>
-                <th>Date</th>
-                <th>Cost</th>
-                <th>Workdone</th>
+                <td>@maintenanceRecord.Date</td>
+                <td>@maintenanceRecord.Cost</td>
+                <td>@maintenanceRecord.Workdone</td>
             </tr>
-            </thead>
-            <tbody>
-                @foreach (var maintenanceRecord in Model.MaintenanceRecords)
-                {
-                    <tr>
-                        <td>@maintenanceRecord.Date</td>
-                        <td>@maintenanceRecord.Cost</td>
-                        <td>@maintenanceRecord.Workdone</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+        }
+        </tbody>
+    </table>
+    <h2>Invoices</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>InvoiceNumber</th>
+            <th>TotalAmount</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var invoice in Model.Invoices)
+        {
+            <tr>
+                <td>@invoice.Date</td>
+                <td>@invoice.InvoiceNumber</td>
+                <td>@invoice.TotalAmount</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
