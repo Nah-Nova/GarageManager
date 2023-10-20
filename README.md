@@ -271,16 +271,16 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 ## Requirements
 |Code|User story|Eis|Functioneel/Niet functioneel|Eigenaar|Gevalideerd|Prioritering Moscow|
 |:----|:----|:----|:----|:----|:----|:----|
-|V-001| UC1 |De garagemedewerker moet in staat zijn gedetailleerde informatie over voertuigen vast te leggen, inclusief merk, model, bouwjaar, chassisnummer, kilometerstand en onderhoudsstatus.|TRUE|Nicky|TRUE|Must Have|
-|V-002| UC2 |De garagemedewerker moet in staat zijn reparatie- en onderhoudsgegevens vast te leggen, inclusief datums, kosten en uitgevoerde werkzaamheden.|TRUE|Nicky|TRUE|Could have|
-|V-003| UC2 |De garagemedewerker moet in staat zijn om afspraken te plannen en te beheren via een intuïtieve interface om het proces van het inplannen van afspraken te verbeteren.|TRUE|Nicky|TRUE|Could have|
-|V-004| UC3 |De garagemedewerker moet in staat zijn om facturen te genereren voor klanten op basis van uitgevoerde werkzaamheden en moet de ontvangen betalingen bijhouden.|TRUE|Nicky|TRUE|Could have|
-|V-005| UC7 |De garagemedewerker moet klantgegevens kunnen beheren, inclusief contactinformatie en voertuiggeschiedenis, om een gepersonaliseerde service te bieden.|TRUE|Nicky|TRUE|Must Have|
-|V-006| UC5 |De garagemedewerker moet in staat zijn om de voorraad van benodigde onderdelen en materialen bij te houden om de beschikbaarheid ervan te controleren.|TRUE|Nicky|TRUE|Must Have|
-|V-007| UC6 |De garagemedewerker moet toegang hebben tot krachtige rapportage- en analysemogelijkheden om financiële gegevens, prestatiegegevens en onderhoudshistorie te genereren.|TRUE|Nicky|TRUE|Could have|
-|V-008| UC7 |De garagemedewerker moet ervoor zorgen dat klantgegevens veilig worden bewaard en dat het systeem beschermd is tegen mogelijke bedreigingen.|FALSE|Nicky|TRUE|Must Have|
-|V-009| UC8 |De garagemedewerker moet de rol van "Garagebeheerder" kunnen vervullen om toegang te hebben tot alle functionaliteiten.|FALSE|Nicky|TRUE|Could have|
-|V-010| UC8 |De garagemedewerker moet de rol van "Monteur" kunnen vervullen met beperkte toegang tot alleen reparatie- en onderhoudsgerelateerde functies.|FALSE|Nicky|TRUE|Could Have|
+|V-001| UC1 |De garagemedewerker moet in staat zijn gedetailleerde informatie over voertuigen vast te leggen |TRUE|Nicky|TRUE|Must Have|
+|V-002| UC2 |De garagemedewerker moet in staat zijn reparatie- en onderhoudsgegevens vast te leggen|TRUE|Nicky|TRUE|Could have|
+|V-003| UC2 |De garagemedewerker moet in staat zijn om afspraken te beheren|TRUE|Nicky|TRUE|Could have|
+|V-004| UC3 |De garagemedewerker moet in staat zijn om facturen te genereren |TRUE|Nicky|TRUE|Could have|
+|V-005| UC7 |De garagemedewerker moet klantgegevens kunnen beheren |TRUE|Nicky|TRUE|Must Have|
+|V-006| UC5 |De garagemedewerker moet in staat zijn om de voorraad van benodigde materialen bij te houden |TRUE|Nicky|TRUE|Must Have|
+|V-007| UC6 |De garagemedewerker moet toegang hebben tot rapportagemogelijkheden om gegevens te genereren.|TRUE|Nicky|TRUE|Could have|
+|V-008| UC7 |De garagemedewerker moet ervoor zorgen dat klantgegevens veilig worden bewaard |FALSE|Nicky|TRUE|Must Have|
+|V-009| UC8 |De garagemedewerker moet de rol van "Garagebeheerder" kunnen vervullen |FALSE|Nicky|TRUE|Could have|
+|V-010| UC8 |De garagemedewerker moet de rol van "Monteur" kunnen vervullen |FALSE|Nicky|TRUE|Could Have|
 
 
 ## Usecase Desciptions
