@@ -40,7 +40,7 @@ Here are the key points of the challenge he's facing:
 ## Project Structure 🏗️
 
 **Warning**
-**Not a Finished Production System**: This project represents an MVP (Minimum Viable Product) created to demonstrate the implementation of concepts covered in web application lectures. It intentionally refrains from going beyond the instructed scope to avoid unnecessary complexity. Please note that this is not a fully polished or production-ready application but serves as a foundation for further development and learning.
+Not a Finished Production System : This project represents an MVP (Minimum Viable Product) created to demonstrate the implementation of concepts covered in web application lectures. It intentionally refrains from going beyond the instructed scope to avoid unnecessary complexity. Please note that this is not a fully polished or production-ready application but serves as a foundation for further development and learning.
 
 Here's an organized project structure to consider for your ASP.NET Core MVC application:
 
