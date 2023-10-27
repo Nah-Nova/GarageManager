@@ -1,4 +1,6 @@
 # AutoProfix Garage Management System 🚗🔧
+> [!NOTE]
+[VIDEO OF PROJECT](https://youtu.be/hDlLA9YO5Oc)
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -9,6 +11,7 @@
 6. [Requirements](#requirements)
 7. [Use Case Descriptions](#usecase-descriptions)
 8. [Diagrams and Designs](#diagrams-and-designs)
+9. [Test Plan](#testplan)
 
 ## Introduction 🌐🛠️
 
@@ -39,7 +42,8 @@ Here are the key points of the challenge he's facing:
 
 ## Project Structure 🏗️
 
-:warning: **Not a Finished Production System**: This project represents an MVP (Minimum Viable Product) created to demonstrate the implementation of concepts covered in web application lectures. It intentionally refrains from going beyond the instructed scope to avoid unnecessary complexity. Please note that this is not a fully polished or production-ready application but serves as a foundation for further development and learning.
+> [!WARNING]  
+Not a Finished Production System : This project represents an MVP (Minimum Viable Product) created to demonstrate the implementation of concepts covered in web application lectures. It intentionally refrains from going beyond the instructed scope to avoid unnecessary complexity. Please note that this is not a fully polished or production-ready application but serves as a foundation for further development and learning.(Payments / Users) has not been implemented
 
 Here's an organized project structure to consider for your ASP.NET Core MVC application:
 
@@ -267,16 +271,16 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 ## Requirements
 |Code|User story|Eis|Functioneel/Niet functioneel|Eigenaar|Gevalideerd|Prioritering Moscow|
 |:----|:----|:----|:----|:----|:----|:----|
-|V-001| UC1 |De garagemedewerker moet in staat zijn gedetailleerde informatie over voertuigen vast te leggen, inclusief merk, model, bouwjaar, chassisnummer, kilometerstand en onderhoudsstatus.|TRUE|Nicky|TRUE|Must Have|
-|V-002| UC2 |De garagemedewerker moet in staat zijn reparatie- en onderhoudsgegevens vast te leggen, inclusief datums, kosten en uitgevoerde werkzaamheden.|TRUE|Nicky|TRUE|Could have|
-|V-003| UC2 |De garagemedewerker moet in staat zijn om afspraken te plannen en te beheren via een intuïtieve interface om het proces van het inplannen van afspraken te verbeteren.|TRUE|Nicky|TRUE|Could have|
-|V-004| UC3 |De garagemedewerker moet in staat zijn om facturen te genereren voor klanten op basis van uitgevoerde werkzaamheden en moet de ontvangen betalingen bijhouden.|TRUE|Nicky|TRUE|Could have|
-|V-005| UC7 |De garagemedewerker moet klantgegevens kunnen beheren, inclusief contactinformatie en voertuiggeschiedenis, om een gepersonaliseerde service te bieden.|TRUE|Nicky|TRUE|Must Have|
-|V-006| UC5 |De garagemedewerker moet in staat zijn om de voorraad van benodigde onderdelen en materialen bij te houden om de beschikbaarheid ervan te controleren.|TRUE|Nicky|TRUE|Must Have|
-|V-007| UC6 |De garagemedewerker moet toegang hebben tot krachtige rapportage- en analysemogelijkheden om financiële gegevens, prestatiegegevens en onderhoudshistorie te genereren.|TRUE|Nicky|TRUE|Could have|
-|V-008| UC7 |De garagemedewerker moet ervoor zorgen dat klantgegevens veilig worden bewaard en dat het systeem beschermd is tegen mogelijke bedreigingen.|FALSE|Nicky|TRUE|Must Have|
-|V-009| UC8 |De garagemedewerker moet de rol van "Garagebeheerder" kunnen vervullen om toegang te hebben tot alle functionaliteiten.|FALSE|Nicky|TRUE|Could have|
-|V-010| UC8 |De garagemedewerker moet de rol van "Monteur" kunnen vervullen met beperkte toegang tot alleen reparatie- en onderhoudsgerelateerde functies.|FALSE|Nicky|TRUE|Could Have|
+|V-001| UC1 |De garagemedewerker moet in staat zijn gedetailleerde informatie over voertuigen vast te leggen |TRUE|Nicky|TRUE|Must Have|
+|V-002| UC2 |De garagemedewerker moet in staat zijn reparatie- en onderhoudsgegevens vast te leggen|TRUE|Nicky|TRUE|Could have|
+|V-003| UC2 |De garagemedewerker moet in staat zijn om afspraken te beheren|TRUE|Nicky|TRUE|Could have|
+|V-004| UC3 |De garagemedewerker moet in staat zijn om facturen te genereren |TRUE|Nicky|TRUE|Could have|
+|V-005| UC7 |De garagemedewerker moet klantgegevens kunnen beheren |TRUE|Nicky|TRUE|Must Have|
+|V-006| UC5 |De garagemedewerker moet in staat zijn om de voorraad van benodigde materialen bij te houden |TRUE|Nicky|TRUE|Must Have|
+|V-007| UC6 |De garagemedewerker moet toegang hebben tot rapportagemogelijkheden om gegevens te genereren.|TRUE|Nicky|TRUE|Could have|
+|V-008| UC7 |De garagemedewerker moet ervoor zorgen dat klantgegevens veilig worden bewaard |FALSE|Nicky|TRUE|Must Have|
+|V-009| UC8 |De garagemedewerker moet de rol van "Garagebeheerder" kunnen vervullen |FALSE|Nicky|TRUE|Could have|
+|V-010| UC8 |De garagemedewerker moet de rol van "Monteur" kunnen vervullen |FALSE|Nicky|TRUE|Could Have|
 
 
 ## Usecase Desciptions
@@ -438,3 +442,182 @@ Feel free to refer to the [Diagrams and Designs](#diagrams-and-designs) section 
 
 4. **Componment Diagrams**: Visualize the modular structure of a software system, depicting components, interfaces, dependencies, and their relationships.
 ![component](https://github.com/Nah-Nova/GarageManager/assets/56248103/d3990a78-2cc7-4fd0-8cfb-f9e8f690c33b)
+
+## Testplan 🧪🔧
+
+#### Test Objectives
+1. To verify that the system captures detailed vehicle information accurately.
+2. To ensure that maintenance scheduling functions as intended.
+3. To validate the generation of invoices for completed maintenance services.
+4. To verify the accurate tracking and recording of payments from customers.
+5. To test the management of inventory items.
+6. To validate the generation of various reports.
+7. To ensure that customer management functions correctly.
+8. To verify user and role management for administrative users.
+
+#### Test Scenarios and Test Cases
+
+##### Test Scenario 1: Vehicle Registration (✅)
+- **Test Case 1.1:** Verify that a new vehicle can be registered successfully.
+  - **Steps:**
+    1. Access the system.
+    2. Navigate to the vehicle registration page.
+    3. Enter unique vehicle details.
+    4. Click the "Create" button.
+  - **Expected Result:** The system should save the vehicle data, and a success message should be displayed.
+
+##### Test Scenario 2: Schedule Maintenance (✅)
+- **Test Case 2.1:** Schedule maintenance for a vehicle.
+  - **Steps:**
+    1. Access the system.
+    2. Select a vehicle for maintenance scheduling.
+    3. Provide maintenance details (e.g., type, date, time).
+    4. Confirm scheduling.
+  - **Expected Result:** The system should schedule the maintenance, and a confirmation should be displayed.
+- **Test Case 2.2:** Cancel maintenance scheduling.
+  - **Steps:**
+    1. Access the system.
+    2. Select a vehicle for maintenance scheduling.
+    3. Provide maintenance details (e.g., type, date, time).
+    4. Cancel scheduling.
+  - **Expected Result:** The scheduling process should be canceled without scheduling the maintenance.
+
+##### Test Scenario 3: Generate Invoice (✅)
+- **Test Case 3.1:** Generate an invoice for completed maintenance.
+  - **Steps:**
+    1. Access the system.
+    2. Select a completed maintenance service for invoice generation.
+    3. Confirm invoice details.
+  - **Expected Result:** The system should generate the invoice, and it should be displayed for review.
+- **Test Case 3.2:** Cancel invoice generation.
+  - **Steps:**
+    1. Access the system.
+    2. Select a completed maintenance service for invoice generation.
+    3. Cancel invoice generation.
+  - **Expected Result:** The invoice generation process should be canceled without generating an invoice.
+
+##### Test Scenario 4: Track Payments (❌)
+- **Test Case 4.1:** Track and record a payment.
+  - **Steps:**
+    1. Access the system.
+    2. Select a customer and a completed maintenance service for payment tracking.
+    3. Record payment details (e.g., amount, date).
+  - **Expected Result:** The system should record the payment and display a confirmation.
+- **Test Case 4.2:** Cancel payment recording.
+  - **Steps:**
+    1. Access the system.
+    2. Select a customer and a completed maintenance service for payment tracking.
+    3. Cancel payment recording.
+  - **Expected Result:** The payment recording process should be canceled without recording the payment.
+
+##### Test Scenario 5: Manage Inventory (✅)
+- **Test Case 5.1:** Add an item to inventory.
+  - **Steps:**
+    1. Access the system.
+    2. Select the option to add an item to inventory.
+    3. Provide item details.
+    4. Confirm the addition.
+  - **Expected Result:** The system should add the item to inventory and display a success message.
+- **Test Case 5.2:** Update an item in inventory.
+  - **Steps:**
+    1. Access the system.
+    2. Select an item in inventory for updating.
+    3. Modify item details.
+    4. Confirm the update.
+  - **Expected Result:** The system should update the item in inventory and display a success message.
+- **Test Case 5.3:** Remove an item from inventory.
+  - **Steps:**
+    1. Access the system.
+    2. Select an item in inventory for removal.
+    3. Confirm the removal.
+  - **Expected Result:** The system should remove the item from inventory and display a success message.
+- **Test Case 5.4:** Cancel inventory management action.
+  - **Steps:**
+    1. Access the system.
+    2. Select an inventory management action (add, update, remove).
+    3. Cancel the action.
+  - **Expected Result:** The inventory management action should be canceled without making any changes.
+
+##### Test Scenario 6: Generate Reports(✅)
+- **Test Case 6.1:** Generate a financial report.
+  - **Steps:**
+    1. Access the system.
+    2. Select the option to generate a financial report.
+    3. Choose the report parameters.
+  - **Expected Result:** The system should generate the financial report for review.
+- **Test Case 6.2:** Generate a maintenance history report.
+  - **Steps:**
+    1. Access the system.
+    2. Select the option to generate a maintenance history report.
+    3. Choose the report parameters.
+  - **Expected Result:** The system should generate the maintenance history report for review.
+- **Test Case 6.3:** Cancel report generation.
+  - **Steps:**
+    1. Access the system.
+    2. Select a report generation option (financial, maintenance).
+    3. Cancel report generation.
+  - **Expected Result:** The report generation process should be canceled without generating a report.
+
+##### Test Scenario 7: Manage Customers (✅)
+- **Test Case 7.1:** Add a new customer.
+  - **Steps:**
+    1. Access the system.
+    2. Select the option to add a new customer.
+    3. Provide customer details.
+    4. Confirm the addition.
+  - **Expected Result:** The system should add the new customer and display a success message.
+- **Test Case 7.2:** Update customer information.
+  - **Steps:**
+    1. Access the system.
+    2. Select a customer for information update.
+    3. Modify customer details.
+    4. Confirm the update.
+  - **Expected Result:** The system should update the customer information and display a success message.
+- **Test Case 7.3:** Remove a customer.
+  - **Steps:**
+    1. Access the system.
+    2. Select a customer for removal.
+    3. Confirm the removal
+
+.
+  - **Expected Result:** The system should remove the customer and display a success message.
+- **Test Case 7.4:** Cancel customer management action.
+  - **Steps:**
+    1. Access the system.
+    2. Select a customer management action (add, update, remove).
+    3. Cancel the action.
+  - **Expected Result:** The customer management action should be canceled without making any changes.
+
+##### Test Scenario 8: User and Role Management(❌)
+- **Test Case 8.1:** Add a new user with specific roles.
+  - **Steps:**
+    1. Access the system with administrative privileges.
+    2. Navigate to user and role management.
+    3. Add a new user with defined roles.
+    4. Confirm the addition.
+  - **Expected Result:** The new user should be added with the specified roles, and a success message should be displayed.
+- **Test Case 8.2:** Update user roles.
+  - **Steps:**
+    1. Access the system with administrative privileges.
+    2. Navigate to user and role management.
+    3. Select a user for role update.
+    4. Modify user roles.
+    5. Confirm the update.
+  - **Expected Result:** The user roles should be updated, and a success message should be displayed.
+- **Test Case 8.3:** Remove a user.
+  - **Steps:**
+    1. Access the system with administrative privileges.
+    2. Navigate to user and role management.
+    3. Select a user for removal.
+    4. Confirm the removal.
+  - **Expected Result:** The user should be removed, and a success message should be displayed.
+- **Test Case 8.4:** Cancel user management action.
+  - **Steps:**
+    1. Access the system with administrative privileges.
+    2. Navigate to user and role management.
+    3. Select a user management action (add, update, remove).
+    4. Cancel the action.
+  - **Expected Result:** The user management action should be canceled without making any changes.
+
+#### Conclusion 📝
+This test plan covers various aspects of the AutoProfix Garage Management System, including vehicle registration, maintenance scheduling, invoice generation, payment tracking, inventory management, report generation, customer management, and user and role management. Executing these test cases will help ensure the reliability and functionality of the system.
