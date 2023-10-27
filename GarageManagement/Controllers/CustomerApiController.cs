@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GarageManagement.Data;
 using GarageManagement.Models;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace GarageManagement.Controllers
 {
@@ -25,29 +27,57 @@ namespace GarageManagement.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
-          if (_context.Customers == null)
-          {
-              return NotFound();
-          }
-            return await _context.Customers.ToListAsync();
+            if (_context.Customers == null)
+            {
+                return NotFound();
+            }
+
+            // Configure JsonSerializerOptions to ignore circular references
+            var jsonSerializerOptions = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve,
+                MaxDepth = 32 // Set the maximum depth to avoid excessive recursion
+            };
+
+            // Serialize the customers with the configured options
+            var customersJson = JsonSerializer.Serialize(await _context.Customers.ToListAsync(), jsonSerializerOptions);
+
+            // Return the JSON response
+            return Content(customersJson, "application/json");
         }
+
 
         // GET: api/CustomerApi/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
-          if (_context.Customers == null)
-          {
-              return NotFound();
-          }
-            var customer = await _context.Customers.FindAsync(id);
+            if (_context.Customers == null)
+            {
+                return NotFound();
+            }
+
+            // Include associated Vehicles for the specific customer
+            var customer = await _context.Customers
+                .Include(c => c.Vehicles)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (customer == null)
             {
                 return NotFound();
             }
 
-            return customer;
+            // Configure JsonSerializerOptions to ignore circular references
+            var jsonSerializerOptions = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve,
+                MaxDepth = 32 // Set the maximum depth to avoid excessive recursion
+            };
+
+            // Serialize the customer with the configured options
+            var customerJson = JsonSerializer.Serialize(customer, jsonSerializerOptions);
+
+            // Return the JSON response
+            return Content(customerJson, "application/json");
         }
 
         // PUT: api/CustomerApi/5
