@@ -32,6 +32,16 @@ namespace GarageManagement.Controllers
                 return NotFound();
             }
 
+            // Include associated Vehicles for all customers
+            var customers = await _context.Customers
+                .Include(c => c.Vehicles) // Include the associated Vehicles
+                .ToListAsync();
+
+            if (customers == null)
+            {
+                return NotFound();
+            }
+
             // Configure JsonSerializerOptions to ignore circular references
             var jsonSerializerOptions = new JsonSerializerOptions
             {
@@ -40,12 +50,11 @@ namespace GarageManagement.Controllers
             };
 
             // Serialize the customers with the configured options
-            var customersJson = JsonSerializer.Serialize(await _context.Customers.ToListAsync(), jsonSerializerOptions);
+            var customersJson = JsonSerializer.Serialize(customers, jsonSerializerOptions);
 
             // Return the JSON response
             return Content(customersJson, "application/json");
         }
-
 
         // GET: api/CustomerApi/5
         [HttpGet("{id}")]
